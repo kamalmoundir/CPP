@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:50:01 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/26 18:08:40 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/03/27 17:41:18 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ Zombie::Zombie()
 }
 Zombie::~Zombie()
 {
-    std::cout << this->getName()<<" test test "<<std::endl;
+    std::cout << this->getName()<<" is dead "<<std::endl;
+}
+void Zombie::announce(void)
+{
+    std::cout<<this->_name <<": BraiiiiiiinnnzzzZ..."<<std::endl;
 }
 std::string Zombie::getName(void)
 {

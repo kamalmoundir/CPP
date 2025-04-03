@@ -6,13 +6,13 @@
 #    By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 17:42:10 by kmoundir          #+#    #+#              #
-#    Updated: 2025/03/27 17:52:47 by kmoundir         ###   ########.fr        #
+#    Updated: 2025/03/27 17:53:06 by kmoundir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = zombie
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp zombieHorde.cpp Zombie.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

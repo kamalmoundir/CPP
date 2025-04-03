@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 14:49:47 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/27 15:44:47 by kmoundir         ###   ########.fr       */
+/*   Created: 2025/04/03 14:31:57 by kmoundir          #+#    #+#             */
+/*   Updated: 2025/04/03 16:29:51 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-void randomChump( std::string name )
-{
-    Zombie nZombie;
-    nZombie.setName(name);
-    nZombie.announce();
+int main( void ) {
+
+    std::string input;
+    Harl        harl;
+
+        std::cout << "Enter a level: ";
+        std::cin >> input;
+        harl.complain(input);
+
+    return 0;
 }
-

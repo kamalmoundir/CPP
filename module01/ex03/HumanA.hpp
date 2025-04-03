@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 14:49:47 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/27 15:44:47 by kmoundir         ###   ########.fr       */
+/*   Created: 2025/03/27 21:08:08 by kmoundir          #+#    #+#             */
+/*   Updated: 2025/04/02 15:35:37 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-void randomChump( std::string name )
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanA
 {
-    Zombie nZombie;
-    nZombie.setName(name);
-    nZombie.announce();
-}
+    private:
+     std::string name;
+        Weapon &weapon;   
+    public:
+    HumanA(std::string name, Weapon &weapon);
+    ~HumanA();
+    void attack();
+    
+};
 
+#endif

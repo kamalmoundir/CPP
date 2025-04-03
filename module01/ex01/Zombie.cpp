@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 14:49:47 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/27 15:44:47 by kmoundir         ###   ########.fr       */
+/*   Created: 2025/03/26 14:50:01 by kmoundir          #+#    #+#             */
+/*   Updated: 2025/03/27 17:40:40 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void randomChump( std::string name )
-{
-    Zombie nZombie;
-    nZombie.setName(name);
-    nZombie.announce();
-}
+#include <string>
 
+
+Zombie::Zombie()
+{
+    
+}
+Zombie::~Zombie()
+{
+    std::cout << this->getName()<<" is dead "<<std::endl;
+}
+void Zombie::announce(void)
+{
+    std::cout<<this->_name <<": BraiiiiiiinnnzzzZ..."<<std::endl;
+}
+std::string Zombie::getName(void)
+{
+    return this->_name;  
+}
+void Zombie::setName(std::string name)
+{
+    this->_name = name;
+}

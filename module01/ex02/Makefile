@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/26 17:42:10 by kmoundir          #+#    #+#              #
-#    Updated: 2025/03/27 17:52:47 by kmoundir         ###   ########.fr        #
+#    Created: 2025/03/27 17:58:25 by kmoundir          #+#    #+#              #
+#    Updated: 2025/03/27 20:19:58 by kmoundir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = zombie
+Name = thisIsBrain
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

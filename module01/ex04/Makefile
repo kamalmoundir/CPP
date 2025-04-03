@@ -6,14 +6,13 @@
 #    By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 17:42:10 by kmoundir          #+#    #+#              #
-#    Updated: 2025/03/27 17:52:47 by kmoundir         ###   ########.fr        #
+#    Updated: 2025/04/03 14:32:31 by kmoundir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = zombie
+Name = main
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
-
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
