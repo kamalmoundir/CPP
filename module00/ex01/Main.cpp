@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 21:21:10 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/26 14:43:41 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/07 14:43:25 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,17 @@ int main(void)
   Contact newContact;
   std::string cmd;
   
-  int i=0;
+  int i = 0;
   while(true)
   {
   
   std::cout<<"Enter your choice : (ADD | SEARCH | EXIT) : ";
   std::getline(std::cin,cmd);
+  if(std::cin.eof())
+  {
+    std::cout << std::endl;
+    break;
+  }
   if(!cmd.compare("ADD"))
   {
     newContact = inputContact();
@@ -86,9 +91,7 @@ int main(void)
     }
   }
   else if(!cmd.compare("EXIT"))
-  {
    break;
-  }
   i++;
   }
   return 0;

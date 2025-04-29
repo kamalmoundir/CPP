@@ -6,28 +6,57 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 19:21:56 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/18 14:30:35 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/12 15:19:10 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed():_rawBits(0){
+Fixed::Fixed():_rawBits(0)
+{
     std::cout<< "Default constructor called" <<std::endl;
 }
-Fixed::Fixed (const Fixed& FixedCopy)
+//convert integer into fixed point
+Fixed::Fixed(const int rowBits)
 {
-    std::cout<< "Copy constructor called" <<std::endl;
-    this->setRawBits(FixedCopy.getRawBits());
+    std::cout << "Int constructor called" << std::endl;
+    this->setRawBits(rowBits << this->_fractionalBits);// or _rowBits = rowBits* 256(2power (_fractionalBits))
+}
+//float construtor 
+Fixed::Fixed(const float rowBits)
+{   
+    std::cout << "Float constructor called" << std::endl;
+    this->setRawBits(roundf(rowBits *(1 << this->_fractionalBits)));
 }
 
-Fixed::~Fixed(){
-    std::cout<< "Destructor called" <<std::endl;
+// Copy constructor
+Fixed::Fixed (const Fixed& FixedCopy)
+{
+    std::cout<< "Copy constructor called" << std::endl;
+    this->setRawBits(FixedCopy.getRawBits());
+}
+//convert  fixed point to integer
+int Fixed::toInt(void) const
+{
+    return (this->getRawBits() >> _fractionalBits);
+}
+
+//convert fixed point to float
+float Fixed::toFloat(void) const
+{
+    return ((float)(this->getRawBits())/(1 << _fractionalBits));
+}
+
+
+
+Fixed::~Fixed()
+{
+    std::cout<< "Destructor called!" <<std::endl;
 }
 
 Fixed &Fixed::operator =(const Fixed& FixedCopy)
 {
-    std::cout << "Copy assignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if(this != &FixedCopy)
     {
         this->setRawBits(FixedCopy.getRawBits());
@@ -35,9 +64,15 @@ Fixed &Fixed::operator =(const Fixed& FixedCopy)
     return *this;
 }
 
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
+{
+    out << fixed.toFloat();
+    return out;
+}
+
 int Fixed::getRawBits( void )const
 {
-   std::cout << "getRawBits member function called" << std::endl;
+  
     return(this->_rawBits);
 }
 

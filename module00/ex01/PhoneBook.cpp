@@ -6,20 +6,15 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:17:07 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/17 14:39:53 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/07 14:47:26 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 
-PhoneBook::PhoneBook()
-{
-    number = 0;
-}
-PhoneBook::~PhoneBook()
-{
-}
+PhoneBook::PhoneBook():number(0){}
+PhoneBook::~PhoneBook(){}
 
 void PhoneBook::AddContact(Contact newContact)
 {

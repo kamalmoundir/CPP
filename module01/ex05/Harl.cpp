@@ -6,13 +6,13 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 14:32:03 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/03 16:26:54 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:20:38 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::Harl(/* args */)
+Harl::Harl()
 {
 }
 
@@ -44,14 +44,18 @@ void Harl::complain( std::string level )
         &Harl::info,
         &Harl::warning,
         &Harl::error
-        
     };
     std::string levels[4]={"DEBUG", "INFO","WARNING","ERROR"};
-    for(int i=0 ; i<4 ; i++)
+    bool found = false;
+    for(int i = 0 ; i < 4 ; i++)
     {
         if(level == levels[i])
         {
             (this->*function[i])();
+            found = true;
+            break;
         }
     }
+    if (!found)
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }

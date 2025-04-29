@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/20 15:34:25 by kmoundir          #+#    #+#              #
-#    Updated: 2025/04/07 14:53:43 by kmoundir         ###   ########.fr        #
+#    Created: 2025/04/05 19:40:00 by kmoundir          #+#    #+#              #
+#    Updated: 2025/04/23 14:18:01 by kmoundir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = account
+Name = ClapTrap
 
-SRC = Account.cpp tests.cpp
+SRC = ClapTrap.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

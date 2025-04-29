@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 13:14:17 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/18 14:29:08 by kmoundir         ###   ########.fr       */
+/*   Created: 2025/04/27 14:27:01 by kmoundir          #+#    #+#             */
+/*   Updated: 2025/04/27 17:25:35 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include  "Fixed.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main( void ) {
+#include "ClapTrap.hpp"
+#include <iostream>
+
+class ScavTrap:public ClapTrap
+{
+    public:
+    ScavTrap();
+    ScavTrap(const std::string& name);
+    ScavTrap(ScavTrap& obj);
+    ~ScavTrap();
+    ScavTrap &operator = (const ScavTrap &obj);
+    void guardGate();
+    void attack(const std::string& target);
     
-Fixed a;
-Fixed b(a);
-Fixed c;
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
-return 0;
-}
+};
+#endif

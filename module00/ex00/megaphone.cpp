@@ -6,11 +6,12 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 20:26:25 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/07 12:05:46 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/07 14:29:02 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 
 
 int main(int ac, char **av)
@@ -27,13 +28,13 @@ int main(int ac, char **av)
     {
         while(i < ac)
         { 
-            j= 0;
+            j = 0;
             while(av[i][j])
             {   
                 std::cout << (char)toupper(av[i][j]);
-                j++;
+                j ++;
             }
-            i++;
+            i ++;
         }    
     }
     std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:50:07 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/27 17:00:03 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/11 10:55:07 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
    std::string zombieName;
    std::string zombieName1;
    
-   std::cout << "Enter zombie(stack) name ";
+   std::cout << "Enter zombie(stack) name :";
    std::getline(std::cin, zombieName);
 
    if (std::cin.eof() == true){

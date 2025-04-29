@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:50:01 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/03/27 17:41:18 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/11 10:55:58 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Zombie::Zombie()
 }
 Zombie::~Zombie()
 {
-    std::cout << this->getName()<<" is dead "<<std::endl;
+    std::cout << this->getName()<<"'s destructor was called : is dead "<<std::endl;
 }
 void Zombie::announce(void)
 {

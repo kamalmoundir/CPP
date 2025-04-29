@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 14:32:03 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/03 16:24:25 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:35:45 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void Harl::error(void)
 } 
 void Harl::complain( std::string level )
 {
+    int found = 0;
+    
     void(Harl::*function[4])()={
         &Harl::debug,
         &Harl::info,
@@ -57,7 +59,11 @@ void Harl::complain( std::string level )
                 case (2):(this->*function[2])();
                 case (3):(this->*function[3])();break;
             }
+            found = 1;
             
         }
+   
     }
+    if (!found)
+    std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
