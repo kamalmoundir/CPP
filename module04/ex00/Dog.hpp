@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 18:28:53 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/05 17:09:14 by kmoundir         ###   ########.fr       */
+/*   Created: 2025/05/05 17:02:03 by kmoundir          #+#    #+#             */
+/*   Updated: 2025/05/07 13:09:54 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-class DiamondTrap:public ScavTrap ,public FragTrap
+#include "Animal.hpp"
+#include "iostream"
+
+class Dog:public Animal
 {
-    private:
-    std::string _name;
-    
     public:
-    DiamondTrap();
-    DiamondTrap(const std::string name);
-    DiamondTrap(DiamondTrap &obj);
-    DiamondTrap &operator=(const DiamondTrap &obj);
-    ~DiamondTrap();
+    Dog();
+    Dog(std::string type);
+    Dog(Dog& obj);
+    Dog &operator=(const Dog& obj);
+    ~Dog();
+   void makeSound(void) const override;
     
-    void attack(const std::string& target);
-    void whoAmI();
 };
 
 #endif

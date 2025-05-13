@@ -6,13 +6,15 @@
 #    By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/05 19:40:00 by kmoundir          #+#    #+#              #
-#    Updated: 2025/05/06 10:19:31 by kmoundir         ###   ########.fr        #
+#    Updated: 2025/05/08 11:11:39 by kmoundir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = diamondtrap
+Name = animalBrain
 
-SRC = ScavTrap.cpp ClapTrap.cpp FragTrap.cpp  DiamondTrap.cpp main.cpp
+SRC = ./main.cpp ./Dog.cpp ./Cat.cpp ./AbstractAnimal.cpp \
+		./Brain.cpp
+		
 
 OBJ = $(SRC:.cpp=.o)
 

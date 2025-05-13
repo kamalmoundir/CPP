@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/05 19:40:00 by kmoundir          #+#    #+#              #
-#    Updated: 2025/05/06 10:19:31 by kmoundir         ###   ########.fr        #
+#    Created: 2025/05/13 11:59:11 by kmoundir          #+#    #+#              #
+#    Updated: 2025/05/13 11:59:59 by kmoundir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Name = diamondtrap
 
-SRC = ScavTrap.cpp ClapTrap.cpp FragTrap.cpp  DiamondTrap.cpp main.cpp
+Name = bureaucrat
+
+SRC = main.cpp Bureaucrat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -6,13 +6,14 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 14:17:19 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/29 16:37:43 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/06 10:25:20 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
@@ -135,7 +136,7 @@ int main()
     
     
     std::cout << "\n=== End of tests, destructors will be called ===\n" << std::endl;
-    */
+    
     // Adding FragTrap tests
     std::cout << "\n===  FragTrap class tests ===\n" << std::endl;
     
@@ -199,6 +200,83 @@ int main()
     defaultFT.highFivesGuys(); // Test special function when destroyed
     
     std::cout << "\n=== End of all tests, destructors will be called ===\n" << std::endl;
-    
+    */
+
+    // Adding DiamondTrap tests
+    std::cout << "\n\n===  DiamondTrap class tests ===\n" << std::endl;
+
+    // Test default constructor
+    std::cout << "\n=== Creating DiamondTrap with default constructor ===\n" << std::endl;
+    DiamondTrap defaultDT;
+
+    // Test parameterized constructor
+    std::cout << "\n=== Creating DiamondTrap with name ===\n" << std::endl;
+    DiamondTrap dave("Dave");
+
+    // Test copy constructor
+    std::cout << "\n=== Creating DiamondTrap with copy constructor ===\n" << std::endl;
+    DiamondTrap daveClone(dave);
+
+    // Test whoAmI function
+    std::cout << "\n=== Testing whoAmI function ===\n" << std::endl;
+    dave.whoAmI();
+
+    // Test inherited abilities
+    std::cout << "\n=== Testing inherited abilities ===\n" << std::endl;
+    dave.guardGate();
+    dave.highFivesGuys();
+
+    // Test assignment operator
+    std::cout << "\n=== Testing assignment operator ===\n" << std::endl;
+    DiamondTrap assigned3;
+    assigned3 = dave;
+    assigned3.whoAmI();
+
+    // Test attack function (should use ScavTrap's version)
+    std::cout << "\n=== Testing attack function ===\n" << std::endl;
+    dave.attack("Enemy");
+
+    // Test taking damage
+    std::cout << "\n=== Testing takeDamage function ===\n" << std::endl;
+    dave.takeDamage(30);
+
+    // Test repairing
+    std::cout << "\n=== Testing beRepaired function ===\n" << std::endl;
+    dave.beRepaired(20);
+
+    // Test energy depletion (DiamondTrap should have ScavTrap's 50 energy points)
+    std::cout << "\n=== Testing energy depletion (should take 50 attacks) ===\n" << std::endl;
+    for (int i = 0; i < 50; i++) {
+        if (i % 10 == 0) {
+            std::cout << "Attack " << i+1 << ": ";
+            dave.attack("Enemy");
+        } else {
+            dave.attack("Enemy");
+        }
+    }
+
+    // Try to attack with no energy
+    std::cout << "\n=== Testing attack with no energy ===\n" << std::endl;
+    dave.attack("Enemy");
+
+    // Try to repair with no energy
+    std::cout << "\n=== Testing repair with no energy ===\n" << std::endl;
+    dave.beRepaired(5);
+
+    // Test taking fatal damage
+    std::cout << "\n=== Testing taking fatal damage ===\n" << std::endl;
+    defaultDT.takeDamage(150); // More than default hit points
+
+    // Try actions when destroyed
+    std::cout << "\n=== Testing actions when destroyed ===\n" << std::endl;
+    defaultDT.attack("Enemy");
+    defaultDT.beRepaired(5);
+    defaultDT.takeDamage(5);
+    defaultDT.whoAmI();
+    defaultDT.guardGate();
+    defaultDT.highFivesGuys();
+
+    std::cout << "\n=== End of DiamondTrap tests, destructors will be called ===\n" << std::endl;
+
     return 0;
 }

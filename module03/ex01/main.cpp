@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 14:17:19 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/27 18:50:43 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/05 16:55:22 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,9 @@ int main()
      defaultCT.beRepaired(5);
      defaultCT.takeDamage(5);
      
-     std::cout << "\n=== End of tests of ClapTrap class, destructors will be called ===\n\n\n" << std::endl;
      
 
-     std::cout << "\n===  ScavTrap class tests ===\n" << std::endl;
+     std::cout << "\n\n\n===  ScavTrap class tests ===\n" << std::endl;
     // Test default constructor
     std::cout << "\n=== Creating ScavTrap with default constructor ===\n" << std::endl;
     ScavTrap defaultST;
