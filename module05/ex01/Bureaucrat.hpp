@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:27:13 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/13 15:20:16 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/13 15:31:37 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Bureaucrat
    public :
    Bureaucrat();
    Bureaucrat(const std::string& name, int grade);
-   Bureaucrat(const Bureaucrat& obj);
    ~Bureaucrat();
+   Bureaucrat(const Bureaucrat& obj);
    Bureaucrat &operator=(const Bureaucrat &obj);
    std::string getName() const;
    int getGrade() const;
@@ -49,4 +49,5 @@ class Bureaucrat
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
+
 #endif

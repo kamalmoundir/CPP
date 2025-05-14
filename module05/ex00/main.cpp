@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:01:38 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/13 13:18:23 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/13 14:20:46 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main() {
     // Test valid bureaucrats
     try {
         Bureaucrat high("High", 1);
+        
         std::cout << "Created: " << high << std::endl;
         
         Bureaucrat low("Low", 150);
@@ -87,7 +88,37 @@ int main() {
         std::cerr << e.what() << '\n';
     }
     
-   
+    //test for initilization of const attribute that can't assign or change value after and that affect on copy object
+    //so should be intilize attribute name befor consteuct the object
     
+ /*
+    try {
+        // Create original bureaucrat
+        Bureaucrat original("Original", 42);
+        std::cout << "Original: " << original << std::endl;
+        
+        // Test copy constructor
+        Bureaucrat copy(original);
+        std::cout << "Copy: " << copy << std::endl;
+        
+        // Test if they're separate objects
+        original.incrementGrade();
+        std::cout << "After increment original: " << original << std::endl;
+        std::cout << "Copy (should be unchanged): " << copy << std::endl;
+        
+        // Test assignment operator
+        Bureaucrat assigned;
+        std::cout << "Default bureaucrat: " << assigned << std::endl;
+        assigned = original;
+        std::cout << "After assignment: " << assigned << std::endl;
+        
+        // Check copy name directly
+        std::cout << "Original name: " << original.getName() << std::endl;
+        std::cout << "Copy name: " << copy.getName() << std::endl;
+        
+    } catch (std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+  */
     return 0;
 }

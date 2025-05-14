@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 11:09:28 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/13 15:21:48 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/13 15:22:02 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade):_name(name)
    else
    _grade = grade;
 }
-
 Bureaucrat::~Bureaucrat()
 {
     std::cout <<"Bureaucrat destructor called" <<std::endl;
@@ -43,7 +42,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &obj):_name(obj.getName())
     this->_grade = obj.getGrade();
 }
 
-Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj) 
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
     std::cout <<"Bureaucrat operator called"<<std::endl;
     
