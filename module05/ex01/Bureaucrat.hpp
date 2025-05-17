@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 16:27:13 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/13 15:31:37 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/17 12:21:46 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 #include <iostream>
 #include <exception>
+
+class Form;
 
 class Bureaucrat
 {
@@ -34,6 +36,8 @@ class Bureaucrat
    
    void incrementGrade();
    void decrementGrade();
+
+   void signForm(Form &form);
    
    class GradeTooHighException: public std::exception
    {

@@ -6,13 +6,16 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:01:38 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/13 13:18:23 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/17 13:16:50 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
+void testFrom(void);
 
 int main() {
     std::cout << "===== BUREAUCRAT TESTS =====\n";
@@ -66,7 +69,7 @@ int main() {
 
     try
     {
-        std::cout<<"==Decrement low grade =="<<std::endl;
+        std::cout<<"\n\n==Decrement low grade =="<<std::endl;
         Bureaucrat limitGrade("LowGrade",150);
         limitGrade.decrementGrade();
     }
@@ -76,7 +79,7 @@ int main() {
     }
     try
     {
-        std::cout<<"==increment high grade =="<<std::endl;
+        std::cout<<"\n\n==increment high grade =="<<std::endl;
         
         Bureaucrat limitGrade1("HighGrade", 1);
         limitGrade1.incrementGrade();
@@ -87,7 +90,39 @@ int main() {
         std::cerr << e.what() << '\n';
     }
     
-   
-    
+    testFrom();
     return 0;
+}
+
+
+void testFrom(void)
+{
+
+    std::cout <<"\n============= FORM TESTS =============\n";
+    try
+    {
+       //create a form with valid grades
+    Form validForm("Tax Form", false, 50, 25);
+    std::cout<< validForm << std::endl;
+    
+    //create a bureaucrat (Manager) with sufficiente grade
+    Bureaucrat manager("Manager",45);
+    manager.signForm(validForm);
+    std::cout<<validForm<<std::endl;
+
+    //TEST : signign with sufficient grade
+    Bureaucrat clerk("Clerk", 100);
+    Form FormWithhighRequarment("high privilege",false,10,10);
+    clerk.signForm(FormWithhighRequarment);
+
+    // test invalid form
+    Form invalidFrom("invalid Form", false ,0 ,160);
+    
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr <<"Exception in form tests:" <<e.what() << '\n';
+    }
+    
+    
 }
