@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 14:28:57 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/17 13:11:25 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/14 17:40:58 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Form::Form() : _name("default"), _isSigned(false), _gradeToSign(1), _gradeToExec
 
 Form::Form(const std::string &name, bool isSigned, const int gradeToSign, const int gradeToExecute) : _name(name),_isSigned(false),_gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
+    (void)isSigned;
     std::cout << "Form constructor with attributes called" << std::endl;
     if(gradeToExecute < 1 || gradeToSign < 1)
         throw GradeTooHighException();

@@ -6,30 +6,38 @@
 #    By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/13 11:59:11 by kmoundir          #+#    #+#              #
-#    Updated: 2025/05/13 11:59:59 by kmoundir         ###   ########.fr        #
+#    Updated: 2025/06/14 17:42:59 by kmoundir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-Name = bureaucrat
 
-SRC = main.cpp Bureaucrat.cpp
+NAME = bureaucrat
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-OBJ = $(SRC:.cpp=.o)
+SRCS = main.cpp Bureaucrat.cpp
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+OBJ_DIR = obj
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 
-all: $(Name)
+all: $(NAME)
 
-$(Name): $(OBJ)
-	c++ $(FLAGS) $(OBJ) -o $(Name)
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+	
+$(NAME): $(OBJS)
+	$(CXX) $(OBJS) -o $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(Name)
+	rm -f $(NAME)
 
-re : fclean all
+re: fclean all
 
-.phony: all clean fclean re
+.PHONY: all clean fclean re
