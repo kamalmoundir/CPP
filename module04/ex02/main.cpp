@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:02:06 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/08 12:09:56 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/02 10:35:16 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,25 @@ int main()
     std::cout << "\n========== ANIMAL ARRAY TEST ==========" << std::endl;
     {
         const int count = 4;
-        AbstractAnimal* AbstractAnimal[count];
+        AbstractAnimal* animals[count];
         
         // Create half dogs, half cats
         for (int i = 0; i < count; i++) {
             if (i < count/2)
-            AbstractAnimal[i] = new Dog();
+            animals[i] = new Dog();
             else
-            AbstractAnimal[i] = new Cat();
+            animals[i] = new Cat();
         }
         
         // Make sure polymorphism works and overrid makeSound
         for (int i = 0; i < count; i++) {
             std::cout << "Animal " << i << " says: ";
-            AbstractAnimal[i]->makeSound();
+            animals[i]->makeSound();
         }
         
         // Clean up - this should call the correct destructors
         for (int i = 0; i < count; i++) {
-            delete AbstractAnimal[i];
+            delete animals[i];
         }
     }
     

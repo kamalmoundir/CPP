@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:02:06 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/08 12:10:11 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/06/02 10:25:32 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int main()
         {
             Cat copyCat = originalCat;  // Test copy constructor
             std::cout << "CopyCat going out of scope..." << std::endl;
-        } // copyCat's destructor should be called here
+        } 
         std::cout << "Original cat still alive!" << std::endl;
     }
     

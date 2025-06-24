@@ -1,0 +1,81 @@
+make: Nothing to be done for 'all'.
+
+=== Creating ScavTrap with default constructor ===
+
+ClapTrap Default constructor called .
+ScavTrap default constructor called 
+
+=== Creating ScavTrap with name ===
+
+ClapTrap constructor of Jhon called
+ScavTrap  Jhon  constructor called 
+
+=== Creating ScavTrap with copy constructor ===
+
+ClapTrap copy constructor called for Jhon
+ScavTrap copy constructor called for Jhon
+
+=== Creating test for guardGate function ===
+
+ScavTrapJhon  is now in Gate keeper mode.
+
+=== Testing assignment operator ===
+
+ClapTrap Default constructor called .
+ScavTrap default constructor called 
+ScavTrap assignment operator called
+ClapTrap Assignation operator called
+
+=== Testing attack function ===
+
+ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+
+=== Testing takeDamage function ===
+
+ ClapTrap Jhon takes 3 points of damage! Hit points reamining: 97
+
+=== Testing beRepaired function ===
+
+ClapTrap Jhon repairs itself for 2 points! Hit points: 99
+
+=== Testing energy depletion ===
+
+Attack 1: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+Attack 2: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+Attack 3: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+Attack 4: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+Attack 5: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+Attack 6: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+Attack 7: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+Attack 8: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+Attack 9: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+Attack 10: ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+
+=== Testing attack with no energy ===
+
+ScavTrap Jhon attacks Enemy, damage 20 points of damage!
+
+=== Testing repair with no energy ===
+
+ClapTrap Jhon repairs itself for 5 points! Hit points: 104
+
+=== Testing taking fatal damage ===
+
+ ClapTrap default takes 15 points of damage! Hit points reamining: 85
+
+=== Testing actions when destroyed ===
+
+ScavTrap default attacks Enemy, damage 20 points of damage!
+ClapTrap default repairs itself for 5 points! Hit points: 90
+ ClapTrap default takes 5 points of damage! Hit points reamining: 85
+
+=== End of tests, destructors will be called ===
+
+ScavTrap Destructor called for  Jhon
+ClapTrap Destructor of Jhon called
+ScavTrap Destructor called for  Jhon
+ClapTrap Destructor of Jhon called
+ScavTrap Destructor called for  Jhon
+ClapTrap Destructor of Jhon called
+ScavTrap Destructor called for  default
+ClapTrap Destructor of default called

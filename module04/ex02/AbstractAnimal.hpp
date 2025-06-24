@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AbstractAnimal.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:01:53 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/05/08 10:58:37 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/05/18 12:27:45 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef ABSTRACTANIMAL_HPP
+# define ABSTRACTANIMAL_HPP
 
 #include<iostream>
 
