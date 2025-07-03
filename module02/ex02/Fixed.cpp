@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 19:21:56 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/16 12:24:31 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/20 13:33:39 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,27 @@ Fixed::Fixed():_rawBits(0){}
 //contructor convert integer into fixed point
 Fixed::Fixed(const int rowBits)
 {
-    //std::cout << "Int constructor called" << std::endl;
     this->setRawBits(rowBits << this->_fractionalBits);// or _rowBits = rowBits* 256(2power (_fractionalBits))
 }
+
 //float construtor 
 Fixed::Fixed(const float rowBits)
 {   
     this->setRawBits(roundf(rowBits *(1 << this->_fractionalBits)));
 }
+
 // Copy constructor
 Fixed::Fixed (const Fixed& FixedCopy)
-{
-   // std::cout<< "Copy constructor called" << std::endl;
+{  
     this->setRawBits(FixedCopy.getRawBits());
 }
+
 //convert  fixed point to integer
 int Fixed::toInt(void) const
 {
     return (this->getRawBits() >> _fractionalBits);
 }
+
 //convert fixed point to float
 float Fixed::toFloat(void) const
 {
@@ -61,7 +63,6 @@ std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 
 int Fixed::getRawBits( void )const
 {
-  
     return(this->_rawBits);
 }
 
@@ -87,6 +88,7 @@ Fixed  Fixed::operator ++(int)
     this->setRawBits(_rawBits + 1);
     return tmp;
 }
+
 Fixed &Fixed::operator --()
 { 
     this->setRawBits(_rawBits - 1);
@@ -166,7 +168,6 @@ bool Fixed::operator != (Fixed &obj)const
 }
 
 //min and max
-
 Fixed &Fixed::min(Fixed& a, Fixed& b)
 {
     return ((a < b) ? a : b);

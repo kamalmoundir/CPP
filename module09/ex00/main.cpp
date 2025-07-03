@@ -5,25 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/03 16:13:30 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/11 14:57:46 by kmoundir         ###   ########.fr       */
+/*   Created: 2025/06/25 12:21:12 by kmoundir          #+#    #+#             */
+/*   Updated: 2025/06/26 21:25:24 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "BitcoinExchange.hpp"
 
-int main(int ac , char **av)
+int main(int ac, char **av)
 {
-    if(ac != 2 || !av[1])
+    if(ac != 2)
     {
-        std::cout<<"ERROR: in arguments\n";
-        return 1;   
+        std::cout<<"Error: could not open file."<<std::endl;
+        return 1;
     }
-    else
-    {
-        Harl harl;
-        
-        harl.complain(av[1]);
-    }
-    return (0);
+    BitcoinExchange exchange;
+    exchange.loadData("data.csv");
+    exchange.exchangeProcess(av[1]);
+    
+    return 0;
 }

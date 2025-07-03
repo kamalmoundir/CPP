@@ -5,25 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/03 16:13:30 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/11 14:57:46 by kmoundir         ###   ########.fr       */
+/*   Created: 2025/06/28 15:28:34 by kmoundir          #+#    #+#             */
+/*   Updated: 2025/06/30 23:25:56 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "PmergeMe.hpp"
 
-int main(int ac , char **av)
+int main(int ac, char **av)
 {
-    if(ac != 2 || !av[1])
+ 
+    if(ac < 2)
     {
-        std::cout<<"ERROR: in arguments\n";
-        return 1;   
+        std::cerr << "Invalid Number of parameters " << std::endl;
+        return 1;
     }
-    else
+      
+    try
     {
-        Harl harl;
-        
-        harl.complain(av[1]);
+        PmergeMe sorter;
+        sorter.sort(ac, av);
     }
-    return (0);
+    catch (const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
+    return 0;
 }

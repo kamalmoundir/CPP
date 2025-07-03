@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 19:21:56 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/12 15:19:10 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/23 11:27:03 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ float Fixed::toFloat(void) const
 
 Fixed::~Fixed()
 {
-    std::cout<< "Destructor called!" <<std::endl;
+    std::cout<< "Destructor called" <<std::endl;
 }
 
-Fixed &Fixed::operator =(const Fixed& FixedCopy)
+Fixed &Fixed::operator = (const Fixed& FixedCopy)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if(this != &FixedCopy)
@@ -64,13 +64,13 @@ Fixed &Fixed::operator =(const Fixed& FixedCopy)
     return *this;
 }
 
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
+std::ostream &operator << (std::ostream &out, const Fixed &fixed)
 {
     out << fixed.toFloat();
     return out;
 }
 
-int Fixed::getRawBits( void )const
+int Fixed::getRawBits(void)const
 {
   
     return(this->_rawBits);

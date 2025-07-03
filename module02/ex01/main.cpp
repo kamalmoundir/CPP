@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 13:14:17 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/12 15:14:42 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/23 11:21:24 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,4 @@ std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 return 0;
 }
-
 

@@ -6,7 +6,7 @@
 /*   By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 15:44:48 by kmoundir          #+#    #+#             */
-/*   Updated: 2025/04/03 14:01:22 by kmoundir         ###   ########.fr       */
+/*   Updated: 2025/04/11 14:26:27 by kmoundir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,18 @@ int main(int ac, char **av)
         
         std::ifstream myReadfile(fileNameInput);
         if(!myReadfile.is_open())
-            std::cout<<"ERROR filename(path)"<<std::endl;
+           {
+             std::cout<<"ERROR filename(path)"<<std::endl;
+             return (1);
+           }
             
         std::string outPutFile = fileNameInput + ".replace";
         std::ofstream replaceFile(outPutFile);
         if(!myReadfile.is_open())
+           {
             std::cout<<"ERROR filename(path)"<<std::endl;
+            return (1);
+           }
         
         std::string line;
         while(getline(myReadfile, line))

@@ -6,7 +6,7 @@
 #    By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 17:42:10 by kmoundir          #+#    #+#              #
-#    Updated: 2025/04/11 11:13:46 by kmoundir         ###   ########.fr        #
+#    Updated: 2025/04/11 14:00:08 by kmoundir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,16 @@ OBJ = $(SRC:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(Name)
-
 $(Name): $(OBJ)
 	c++ $(FLAGS) $(OBJ) -o $(Name)
+
+clean:
+	rm -f $(OBJ)
+	
+
 fclean: clean
 	rm -f $(Name)
 
 re : fclean all
 
-.phony: all clean fclean re
+.phony: all  fclean re

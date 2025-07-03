@@ -6,13 +6,13 @@
 #    By: kmoundir <kmoundir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/05 19:40:00 by kmoundir          #+#    #+#              #
-#    Updated: 2025/04/18 11:18:53 by kmoundir         ###   ########.fr        #
+#    Updated: 2025/04/20 13:03:18 by kmoundir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = fixed
 
-SRC = Fixed.cpp test_fixed.cpp
+SRC = Fixed.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
